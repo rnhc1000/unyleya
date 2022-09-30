@@ -1,0 +1,21 @@
+{
+    "name": "rferreira/kafka",
+    "description": "Kafka Unileya",
+    "type": "project",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "Rferreira\\Kafka\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ricardo Ferreira",
+            "email": "rnhc1000@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "nmred/kafka-php": "v0.2.0.8"
+    }
+}
