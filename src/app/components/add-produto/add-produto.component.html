@@ -1,0 +1,68 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="title">Nome</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nome"
+          required
+          [(ngModel)]="produto.nome"
+          name="nome"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Descricao</label>
+        <input
+          class="form-control"
+          id="descricao"
+          required
+          [(ngModel)]="produto.descricao"
+          name="descricao"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="codigo">Codigo</label>
+        <input
+          class="form-control"
+          id="Codigo"
+          required
+          [(ngModel)]="produto.codigo"
+          name="codigo"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="quantidade">Quantidade</label>
+        <input
+          class="form-control"
+          id="qunatidade"
+          required
+          [(ngModel)]="produto.quantidade"
+          name="quantidade"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="preco">Preco</label>
+        <input
+          class="form-control"
+          id="preco"
+          required
+          [(ngModel)]="produto.preco"
+          name="preco"
+        />
+      </div>
+
+      <button (click)="saveProduto()" class="btn btn-success">Salvar</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Produto foi adicionado com sucesso!!!</h4>
+      <button class="btn btn-success" (click)="newProduto()">Adicionar</button>
+    </div>
+  </div>
+</div>

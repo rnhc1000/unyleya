@@ -1,0 +1,72 @@
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentProduto.id">
+    <h4>Produto</h4>
+    <div>
+      <label><strong>Nome:</strong></label> {{ currentProduto.nome }}
+    </div>
+    <div>
+      <label><strong>Descricao:</strong></label>
+      {{ currentProduto.descricao }}
+    </div>
+
+
+    <a
+      class="badge badge-warning"
+      routerLink="/produtos/{{ currentProduto.id }}"
+    >
+      Edit
+    </a>
+  </div>
+
+  <div *ngIf="!currentProduto">
+    <br />
+    <p>Clique em um Produto...</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="currentProduto.id" class="edit-form">
+    <h4>Produto</h4>
+    <form>
+      <div class="form-group">
+        <label for="title">Nome</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nome"
+          [(ngModel)]="currentProduto.nome"
+          name="nome"
+        />
+      </div>
+      <div class="form-group">
+        <label for="descricao">Descricao</label>
+        <input
+          type="text"
+          class="form-control"
+          id="descricao"
+          [(ngModel)]="currentProduto.descricao"
+          name="descricao"
+        />
+      </div>
+
+    </form>
+
+    <button class="badge badge-danger mr-2" (click)="deleteProduto()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateProduto()"
+    >
+      Atualiza
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentProduto.id">
+    <br />
+    <p>Não é possivel acessar este produto...</p>
+  </div>
+</ng-template>
