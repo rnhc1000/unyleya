@@ -1,0 +1,21 @@
+
+Methods	Urls	                          Actions
+POST	  /api/produtos/novoProduto	      Insere novo produto
+GET	    /api/produtos/	                retrieve all produtos/
+GET	    /api/produtos/:id	              retrieve a Product by :id
+PUT	    /api/produtos/:id	              update a Product by :id
+DELETE	/api/produtos/:id	              delete a Product by :id
+DELETE	/api/produtos/	                delete all produtos/
+GET	    /api/produtos/?nome=[keyword]	find all produtos/ which title contains keyword 
+
+
+
+Como já dito, JPA é somente a tecnologia de acesso ao banco de dados. Com ele você pode usar os Design Patterns (padrão de design) que não fazem parte do JPA especificamente.
+
+Repository é um Design Pattern onde os dados são obtidos do banco de dados e ocorre também a regra de negócio. Este retorna objetos de domínio que seriam as Entidades (classes anotadas com @Entity).
+
+DAO é outro Design Pattern onde somente há a comunicação com o banco de dados sem regra de negócio.
+
+Service seria outro Design Pattern onde há somente a regra de negócio e não tem acesso direto ao banco de dados.
+
+Controller Ele é utilizado para lidar com a ligação da View com as outras partes do sistema que são a regra de negócio e banco de dados.
