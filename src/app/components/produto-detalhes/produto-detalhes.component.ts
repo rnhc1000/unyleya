@@ -15,10 +15,10 @@ export class ProdutoDetalhesComponent implements OnInit {
 
   @Input() currentProduto: Produto = {
     nome: '',
-    descricao: '',
     codigo: '',
-    preco: '',
-    quantidade: ''
+    descricao: '',
+    quantidade: 0,
+    preco: 0
   };
   
   message = '';

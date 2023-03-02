@@ -3,6 +3,7 @@ export class Produto {
   nome?: string;
   descricao?: string;
   codigo?: string;
-  preco?: string;
-  quantidade?: string;
+  quantidade?: number;
+  preco?: number;
+  
 }

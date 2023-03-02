@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Produto } from '../models/produto.model';
 
-const baseUrl = 'http://localhost:8080/api/produtos';
+const baseUrl = 'http://127.0.0.1:8080/api/produtos';
 
 
 @Injectable({
@@ -36,6 +36,10 @@ export class ProdutoService {
 
   deleteAll(): Observable<any> {
     return this.http.delete(baseUrl);
+  }
+
+  findByNome(nome: any): Observable<Produto[]> {
+    return this.http.get<Produto[]>(`${baseUrl}?produto=${Produto}`);
   }
 
 }

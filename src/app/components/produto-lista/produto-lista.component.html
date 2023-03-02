@@ -4,14 +4,14 @@
       <input
         type="text"
         class="form-control"
-        placeholder="Pesquisa por Produto"
+        placeholder="Pesquisa por Nome"
         [(ngModel)]="nome"
       />
       <div class="input-group-append">
         <button
           class="btn btn-outline-secondary"
           type="button"
-          (click)="searchNome()"
+          (click)="searchProduto()"
         >
           Pesquisa
         </button>
@@ -32,13 +32,13 @@
     </ul>
 
     <button class="m-3 btn btn-sm btn-danger" (click)="removeAllProdutos()">
-      Remove Todos os Produtos
+      Remover Produtos
     </button>
   </div>
   <div class="col-md-6">
-    <app-produto-details
+    <app-produto-detalhes
       [viewMode]="true"
       [currentProduto]="currentProduto"
-    ></app-produto-details>
+    ></app-produto-detalhes>
   </div>
 </div>

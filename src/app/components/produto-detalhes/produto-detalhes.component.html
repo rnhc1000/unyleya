@@ -5,10 +5,17 @@
       <label><strong>Nome:</strong></label> {{ currentProduto.nome }}
     </div>
     <div>
-      <label><strong>Descricao:</strong></label>
-      {{ currentProduto.descricao }}
+      <label><strong>Descricao:</strong></label> {{ currentProduto.descricao }}
     </div>
-
+    <div>
+      <label><strong>Codigo:</strong></label> {{ currentProduto.codigo }}
+    </div>
+    <div>
+      <label><strong>Preco:</strong></label> {{ currentProduto.preco }}
+    </div>
+    <div>
+      <label><strong>Quantidade:</strong></label> {{ currentProduto.quantidade }}
+    </div>
 
     <a
       class="badge badge-warning"
@@ -46,6 +53,36 @@
           id="descricao"
           [(ngModel)]="currentProduto.descricao"
           name="descricao"
+        />
+      </div>
+      <div class="form-group">
+        <label for="codigo">Codigo</label>
+        <input
+          type="text"
+          class="form-control"
+          id="codigo"
+          [(ngModel)]="currentProduto.codigo"
+          name="codigo"
+        />
+      </div>
+      <div class="form-group">
+        <label for="preco">Preco</label>
+        <input
+          type="text"
+          class="form-control"
+          id="preco"
+          [(ngModel)]="currentProduto.preco"
+          name="preco"
+        />
+      </div>
+      <div class="form-group">
+        <label for="quantidade">Quantidade</label>
+        <input
+          type="text"
+          class="form-control"
+          id="quantidade"
+          [(ngModel)]="currentProduto.quantidade"
+          name="quantidade"
         />
       </div>
 

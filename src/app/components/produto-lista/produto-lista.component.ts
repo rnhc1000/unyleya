@@ -12,7 +12,7 @@ export class ProdutoListaComponent implements OnInit{
   produtos?: Produto[];
   currentProduto: Produto = {};
   currentIndex = -1;
-  title = '';
+  nome = '';
 
   constructor(private produtoService: ProdutoService) { }
 
@@ -48,6 +48,20 @@ export class ProdutoListaComponent implements OnInit{
         next: (res) => {
           console.log(res);
           this.refreshList();
+        },
+        error: (e) => console.error(e)
+      });
+  }
+
+  searchProduto(): void {
+    this.currentProduto = {};
+    this.currentIndex = -1;
+
+    this.produtoService.findByNome(this.produtos)
+      .subscribe({
+        next: (data) => {
+          this.produtos = data;
+          console.log(data);
         },
         error: (e) => console.error(e)
       });

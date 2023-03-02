@@ -12,8 +12,8 @@ export class AddProdutoComponent implements OnInit{
     nome: '',
     descricao: '',
     codigo: '',
-    preco: '',
-    quantidade: ''
+    preco: 0,
+    quantidade: 0
   };
   submitted = false;
 
@@ -27,8 +27,8 @@ export class AddProdutoComponent implements OnInit{
       nome: this.produto.nome,
       descricao: this.produto.descricao,
       codigo: this.produto.codigo,
-      quantidade: this.produto.quantidade,
-      preco: this.produto.preco
+      preco: this.produto.preco,
+      quantidade: this.produto.quantidade
     };
 
     this.produtoService.create(data)
@@ -47,8 +47,8 @@ export class AddProdutoComponent implements OnInit{
       nome: '',
       descricao: '',
       codigo: '',
-      quantidade: '',
-      preco: ''
+      quantidade: 0,
+      preco: 0
     };
   }
 
